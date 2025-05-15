@@ -3,7 +3,8 @@
 import { useCallback, useEffect, useState } from "react";
 import { tasksApiService } from "@/entities/tasks/api";
 import { Task } from "@/entities/tasks/model";
-import { Button } from "@/shared/ui/Button/Button";
+import Button from "@/shared/ui/Button";
+import Title from "@/shared/ui/Title";
 import { useRouter } from "next/navigation";
 import { routesList } from "@/services/routes";
 
@@ -27,9 +28,7 @@ export default function TasksPage() {
   return (
     <>
       <div className="flex justify-between items-center">
-        <h2 className="text-xl font-semibold tracking-tight text-balance text-gray-900 sm:text-2xl">
-          Tasks list
-        </h2>
+        <Title>Tasks list</Title>
         <Button btn="primary" onClick={onClickAddTaskBtn}>
           Add task
         </Button>

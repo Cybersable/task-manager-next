@@ -1,5 +1,11 @@
+import Title from "@/shared/ui/Title";
+
 export default function TasksNewPage() {
   return (
-    <> Add New task </>
+    <>
+      <div className="flex justify-between items-center">
+        <Title>Adding new task</Title>
+      </div>
+    </>
   )
 }

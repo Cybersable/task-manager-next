@@ -1,4 +1,4 @@
-import React, { memo } from "react";
+import { FC, memo } from "react";
 import { tv } from "tailwind-variants";
 
 const button = tv({
@@ -14,14 +14,14 @@ const button = tv({
   },
 });
 
-export interface ButtonProps extends React.DetailedHTMLProps<React.ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>, React.AriaAttributes  {
+interface ButtonProps extends React.DetailedHTMLProps<React.ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>, React.AriaAttributes  {
   btn?: 'primary' | 'secondary'
 }
 
-export const Button: React.FC<ButtonProps> = memo(({ btn, children, ...rest }) => {
-  return (
-    <button type="button" className={button({ colorSchema: btn })} {...rest}>
+const Button: FC<ButtonProps> = memo(({ btn, children, ...rest }) => (
+    <button type="button" className={button({ colorSchema: btn })} { ...rest }>
       {children}
     </button>
-  );
-});
+  ));
+
+export default Button;
