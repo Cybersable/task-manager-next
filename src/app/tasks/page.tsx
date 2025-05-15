@@ -5,6 +5,7 @@ import { tasksApiService } from "@/entities/tasks/api";
 import { Task } from "@/entities/tasks/model";
 import { Button } from "@/shared/ui/Button/Button";
 import { useRouter } from "next/navigation";
+import { routesList } from "@/services/routes";
 
 export default function TasksPage() {
   const [tasks, setTasks] = useState<Task[]>([]);
@@ -16,7 +17,7 @@ export default function TasksPage() {
   }, []);
 
   const onClickAddTaskBtn = useCallback(() => {
-    push('/tasks/new');
+    push(routesList.tasksNew.path);
   }, []);
 
   useEffect(() => {
