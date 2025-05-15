@@ -3,14 +3,21 @@
 import { useCallback, useEffect, useState } from "react";
 import { tasksApiService } from "@/entities/tasks/api";
 import { Task } from "@/entities/tasks/model";
+import { Button } from "@/shared/ui/Button/Button";
+import { useRouter } from "next/navigation";
 
 export default function TasksPage() {
   const [tasks, setTasks] = useState<Task[]>([]);
+  const { push } = useRouter();
 
   const fetchTasks = useCallback(() => {
     tasksApiService.getTasks()
       .then((response) => setTasks(response.data));
   }, []);
+
+  const onClickAddTaskBtn = () => {
+    push('/tasks/new');
+  }
 
   useEffect(() => {
     fetchTasks();
@@ -18,9 +25,14 @@ export default function TasksPage() {
 
   return (
     <>
-      <h2 className="text-xl font-semibold tracking-tight text-balance text-gray-900 sm:text-2xl">
-        Tasks list
-      </h2>
+      <div className="flex justify-between items-center">
+        <h2 className="text-xl font-semibold tracking-tight text-balance text-gray-900 sm:text-2xl">
+          Tasks list
+        </h2>
+        <Button btn="primary" onClick={onClickAddTaskBtn}>
+          Add task
+        </Button>
+      </div>
       {tasks.length
         ? <ul role="list" className="divide-y divide-gray-100 pt-2">
           {tasks.map((task) => (
