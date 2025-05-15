@@ -15,9 +15,9 @@ export default function TasksPage() {
       .then((response) => setTasks(response.data));
   }, []);
 
-  const onClickAddTaskBtn = () => {
+  const onClickAddTaskBtn = useCallback(() => {
     push('/tasks/new');
-  }
+  }, []);
 
   useEffect(() => {
     fetchTasks();

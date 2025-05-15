@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import { tv } from "tailwind-variants";
 
 const button = tv({
@@ -18,10 +18,10 @@ export interface ButtonProps extends React.DetailedHTMLProps<React.ButtonHTMLAtt
   btn?: 'primary' | 'secondary'
 }
 
-export const Button: React.FC<ButtonProps> = ({ btn, children, ...rest }) => {
+export const Button: React.FC<ButtonProps> = memo(({ btn, children, ...rest }) => {
   return (
     <button type="button" className={button({ colorSchema: btn })} {...rest}>
       {children}
     </button>
   );
-}
+});
