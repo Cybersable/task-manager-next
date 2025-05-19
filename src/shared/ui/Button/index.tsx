@@ -1,7 +1,7 @@
 import { FC, memo } from "react";
 import { tv } from "tailwind-variants";
 
-const button = tv({
+const buttonStyle = tv({
   base: 'cursor-pointer focus:outline-none focus:ring-1 font-medium text-sm rounded-lg px-2.5 py-1.5',
   variants: {
     colorSchema: {
@@ -15,12 +15,12 @@ const button = tv({
   },
 });
 
-interface ButtonProps extends React.DetailedHTMLProps<React.ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>, React.AriaAttributes  {
+interface ButtonProps extends React.DetailedHTMLProps<React.ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>, React.AriaAttributes {
   btn?: 'primary' | 'secondary' | 'ghost'
 }
 
 const Button: FC<ButtonProps> = memo(({ btn, children, ...rest }) => (
-    <button type="button" className={button({ colorSchema: btn })} { ...rest }>
+    <button type="button" className={buttonStyle({ colorSchema: btn })} { ...rest }>
       {children}
     </button>
   ));
