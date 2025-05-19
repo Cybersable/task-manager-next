@@ -2,6 +2,7 @@
 
 import { useForm } from "react-hook-form";
 import Button from "@/shared/ui/Button";
+import { useRouter } from "next/navigation";
 
 export interface ITaskForm {
   title: string
@@ -16,6 +17,8 @@ interface ITasksFormProps {
 }
 
 export default function TasksForm({ task, onFormSubmit }: ITasksFormProps) {
+    const { back } = useRouter();
+
     const { register, handleSubmit } = useForm<ITaskForm>({
         defaultValues: task || {
             title: '',
@@ -60,7 +63,7 @@ export default function TasksForm({ task, onFormSubmit }: ITasksFormProps) {
             </div>
 
             <div className="mt-6 flex items-center justify-end gap-x-4">
-                <Button btn="ghost">
+                <Button btn="ghost" onClick={back}>
                     Cancel
                 </Button>
                 <Button type="submit"btn="primary">
