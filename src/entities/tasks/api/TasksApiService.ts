@@ -7,6 +7,10 @@ import {
 export class TasksApiService {
   private BASE_URL = '/tasks';
 
+  getTasksItem(taskId: string) {
+    return api.get<GetTasksResponse>(`${this.BASE_URL}/${taskId}`);
+  }
+
   getTasks() {
     return api.get<GetTasksResponse[]>(this.BASE_URL);
   }
