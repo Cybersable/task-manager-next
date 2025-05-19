@@ -1,7 +1,7 @@
 "use client"
 
 import { useForm } from "react-hook-form";
-import Button from "@/shared/ui/Button";
+import { Button } from "@mui/material";
 import { useRouter } from "next/navigation";
 
 export interface ITaskForm {
@@ -63,10 +63,10 @@ export default function TasksForm({ task, onFormSubmit }: ITasksFormProps) {
             </div>
 
             <div className="mt-6 flex items-center justify-end gap-x-4">
-                <Button btn="ghost" onClick={back}>
+                <Button onClick={back}>
                     Cancel
                 </Button>
-                <Button type="submit"btn="primary">
+                <Button type="submit">
                     Save
                 </Button>
             </div>

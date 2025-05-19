@@ -1,6 +1,6 @@
 "use client"
 
-import Button from "@/shared/ui/Button";
+import { Button } from "@mui/material";
 import { tasksApiService } from "@/entities/tasks/api";
 import { useCallback } from "react";
 import { useRouter } from "next/navigation";
@@ -18,6 +18,6 @@ export default function TaskDelete({ taskId }: { taskId: string }) {
     }, [taskId]);
 
     return (
-        <Button btn="dangerLink" onClick={onClick}>Delete task</Button>
+        <Button onClick={onClick}>Delete task</Button>
     )
 }
