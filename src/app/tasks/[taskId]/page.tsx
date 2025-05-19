@@ -5,6 +5,7 @@ import Title from "@/shared/ui/Title";
 
 export default async function TasksPage({ params }: { params: Promise<{ taskId: string }>}) {
     const { taskId } = await params;
+    
     const task = await tasksApiService
       .getTasksItem(taskId)
       .then((response) => response.data);

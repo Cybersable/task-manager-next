@@ -17,6 +17,6 @@ export const routesList = {
     },
     tasksUpdate: (taskId: string) => ({
         key: `TASKS_UPDATE_${taskId}_PAGE`,
-        path: `/tasks/update/${taskId}`,
+        path: `/tasks/${taskId}/update`,
     }),
 } as const;
