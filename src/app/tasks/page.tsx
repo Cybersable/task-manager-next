@@ -17,8 +17,12 @@ export default function TasksPage() {
       .then((response) => setTasks(response.data));
   }, []);
 
-  const onClickAddTaskBtn = useCallback(() => {
+  const onAddTaskBtnClick = useCallback(() => {
     push(routesList.tasksNew.path);
+  }, []);
+
+  const onTaskCardClick = useCallback((taskId: string) => {
+    push(routesList.tasksItem(taskId).path);
   }, []);
 
   useEffect(() => {
@@ -29,14 +33,18 @@ export default function TasksPage() {
     <>
       <div className="flex justify-between items-center">
         <Title>Tasks list</Title>
-        <Button btn="primary" onClick={onClickAddTaskBtn}>
+        <Button btn="primary" onClick={onAddTaskBtnClick}>
           Add task
         </Button>
       </div>
       {tasks.length
         ? <ul role="list" className="divide-y divide-gray-100 pt-2">
           {tasks.map((task) => (
-            <li key={task.id} className="flex justify-between gap-x-6 py-5">
+            <li 
+              key={task.id}
+              className="flex justify-between gap-x-6 py-5 cursor-pointer"
+              onClick={() => onTaskCardClick(task.id)}
+            >
               <div className="flex min-w-0 gap-x-4">
                 <div className="min-w-0 flex-auto">
                   <p className="text-sm/6 font-semibold text-gray-900">{task.title}</p>
