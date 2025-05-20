@@ -9,6 +9,4 @@ export interface CreateTaskData {
   description?: string
 }
 
-export interface UpdateTaskData extends CreateTaskData {
-
-}
+export interface UpdateTaskData extends CreateTaskData {}

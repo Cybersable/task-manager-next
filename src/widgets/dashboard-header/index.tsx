@@ -1,6 +1,5 @@
 import * as React from 'react';
 import Stack from '@mui/material/Stack';
-import NotificationsRoundedIcon from '@mui/icons-material/NotificationsRounded';
 import ColorModeIconDropdown from '@/features/theme/color-mode-icon-dropdown';
 import NavigationBreadcrumbs from '@/shared/ui/breadcrumbs';
 

@@ -1,10 +1,4 @@
-import { ReactNode } from "react";
-
-export default function Dashboard({
-  children,
-}:{
-  children: ReactNode;
-}) {
+export default function Dashboard() {
   return (
     <>Dashboard</>
   )

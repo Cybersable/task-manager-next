@@ -1,5 +1,3 @@
-import { Dashboard } from "@mui/icons-material";
-
 export const routesList = {
     home: {
         key: 'HOME_PAGE',

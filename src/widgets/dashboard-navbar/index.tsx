@@ -9,7 +9,7 @@ import MuiToolbar from '@mui/material/Toolbar';
 import { tabsClasses } from '@mui/material/Tabs';
 import Typography from '@mui/material/Typography';
 import DashboardRoundedIcon from '@mui/icons-material/DashboardRounded';
-import ColorModeIconDropdown from '../../features/theme/color-mode-icon-dropdown';
+import ColorModeIconDropdown from '@/features/theme/color-mode-icon-dropdown';
 
 const Toolbar = styled(MuiToolbar)({
   width: '100%',
@@ -28,11 +28,11 @@ const Toolbar = styled(MuiToolbar)({
 });
 
 export default function DashboardNavbar() {
-  const [open, setOpen] = React.useState(false);
-
-  const toggleDrawer = (newOpen: boolean) => () => {
-    setOpen(newOpen);
-  };
+  // const [open, setOpen] = React.useState(false);
+  //
+  // const toggleDrawer = (newOpen: boolean) => () => {
+  //   setOpen(newOpen);
+  // };
 
   return (
     <AppBar

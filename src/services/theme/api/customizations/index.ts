@@ -3,3 +3,4 @@ export { feedbackCustomizations } from './feedbackCustomizations';
 export { inputsCustomizations } from './inputsCustomizations';
 export { navigationCustomizations } from './navigationCustomizations';
 export { surfacesCustomizations } from './surfacesCustomizations';
+export { dataGridCustomizations } from './dataGridCustomizations';

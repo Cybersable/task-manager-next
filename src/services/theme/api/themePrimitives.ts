@@ -5,6 +5,7 @@ declare module '@mui/material/Paper' {
     highlighted: true;
   }
 }
+
 declare module '@mui/material/styles' {
   interface ColorRange {
     50: string;
@@ -394,7 +395,7 @@ export const shape = {
   borderRadius: 8,
 };
 
-// @ts-ignore
+// @ts-expect-error jsut ignore this
 const defaultShadows: Shadows = [
   'none',
   'var(--template-palette-baseShadow)',

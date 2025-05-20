@@ -11,7 +11,8 @@ import {
   dataDisplayCustomizations,
   feedbackCustomizations,
   navigationCustomizations,
-  surfacesCustomizations
+  surfacesCustomizations,
+  dataGridCustomizations,
 } from './api/customizations';
 
 interface IThemeProviderProps {
@@ -19,7 +20,7 @@ interface IThemeProviderProps {
   themeComponents?: ThemeOptions['components']
 }
 
-const ThemeProvider: FC<IThemeProviderProps> = ({ children, themeComponents }) => {
+const ThemeProvider: FC<IThemeProviderProps> = ({ children }) => {
   const theme = useMemo(() => 
     createTheme({
       cssVariables: {
@@ -36,6 +37,7 @@ const ThemeProvider: FC<IThemeProviderProps> = ({ children, themeComponents }) =
         ...feedbackCustomizations,
         ...navigationCustomizations,
         ...surfacesCustomizations,
+        ...dataGridCustomizations,
       },
     }),
   []);
